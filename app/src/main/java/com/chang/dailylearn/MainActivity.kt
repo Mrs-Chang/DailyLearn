@@ -15,6 +15,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+        mBinding.tvHello.setMaskDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.bg_view_wave
+            )!!
+        )
+        mBinding.tvHello.setOnClickListener {
+            mBinding.tvHello.startAnim()
+        }
     }
 
 

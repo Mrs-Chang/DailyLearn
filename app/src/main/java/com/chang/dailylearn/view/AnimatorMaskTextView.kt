@@ -11,18 +11,6 @@ import android.util.AttributeSet
 import android.util.Log
 import androidx.appcompat.widget.AppCompatTextView
 
-/***
- *         mBinding.tvHello.setMaskDrawable(
-            ContextCompat.getDrawable(
-                this,
-                R.drawable.bg_view_wave
-            )!!)
-            mBinding.tvHello.setOnClickListener {
-                mBinding.tvHello.startAnim()
-            }
- *
- *
- */
 class AnimatorMaskTextView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : AppCompatTextView(context, attrs, defStyleAttr) {

@@ -186,14 +186,43 @@ class MatrixImageView @JvmOverloads constructor(
                 iv.translationY = (1 - it.animatedFraction) * ty / 2
                 iv.imageMatrix = matrix
                 iv.layoutParams.width = (imgWidth / 2 + imgWidth / 2 * it.animatedFraction).toInt()
-                iv.layoutParams.height = (imgHeight / 2 + imgHeight / 2 * it.animatedFraction).toInt()
+                iv.layoutParams.height =
+                    (imgHeight / 2 + imgHeight / 2 * it.animatedFraction).toInt()
                 iv.requestLayout() // 宽高发生变化，需要重新测量
             }
-            animSet.playSequentially(firstAnimator, secondAnimator, threeAnimator, fourAnimator, fiveAnimator, sixAnimator)
+            animSet.playSequentially(
+                firstAnimator,
+                secondAnimator,
+                threeAnimator,
+                fourAnimator,
+                fiveAnimator,
+                sixAnimator
+            )
             animSet.duration = 1000
             animSet.start()
         }
     }
+
+
+    fun doSomeThingAnimation3() {
+        /**
+         * setTranslate:设置矩阵
+         * preTranslate：左乘
+         * postTranslate：右乘
+         * */
+
+        val initMatrix = this.imageMatrix
+        val twoMatrix = Matrix(initMatrix).apply {
+            this.setTranslate(100f, 0f)
+            this.preTranslate(100f, 0f)
+            this.postTranslate(100f, 0f)
+            this.preTranslate(-50f, 0f)
+            this.preTranslate(10f, 0f)
+            this.postTranslate(20f, 0f)
+        }
+
+    }
+
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
