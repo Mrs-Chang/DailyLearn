@@ -12,7 +12,7 @@
         android:theme="@style/Theme.DailyLearn"
         tools:targetApi="31">
         <activity
-            android:name=".view.RabbitActivity"
+            android:name=".anim.TodoActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,19 +21,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".view.RabbitActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".view.FlipClockActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".view.ClockActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".view.MatrixActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
