@@ -3,17 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/blue"
     android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    android:fitsSystemWindows="true"
     tools:context=".view.ClockActivity">
 
-    <com.chang.dailylearn.view.ClockView
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/clockView"
-        android:layout_width="400dp"
-        android:layout_height="400dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:letterSpacing="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_word_or_sense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="adj.英俊的;漂亮的"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_input" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:text="校验"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_word_or_sense" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
