@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SnowfallView">
+        <attr name="snowflakesNum" format="integer"/>
+        <attr name="snowflakeImage" format="reference"/>
+        <attr name="snowflakeAlphaMin" format="integer"/>
+        <attr name="snowflakeAlphaMax" format="integer"/>
+        <attr name="snowflakeAngleMax" format="integer"/>
+        <attr name="snowflakeSizeMin" format="dimension"/>
+        <attr name="snowflakeSizeMax" format="dimension"/>
+        <attr name="snowflakeSpeedMin" format="integer"/>
+        <attr name="snowflakeSpeedMax" format="integer"/>
+    </declare-styleable>
+</resources>

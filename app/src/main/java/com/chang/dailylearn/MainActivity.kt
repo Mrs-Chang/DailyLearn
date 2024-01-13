@@ -1,23 +1,24 @@
 package com.chang.dailylearn
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.chang.dailylearn.databinding.ActivityMainBinding
 import com.chang.dailylearn.dm.dialog.AbsDialog
 import com.chang.dailylearn.dm.dialog.AdDialog
 import com.chang.dailylearn.dm.dialog.PolicyDialog
 import com.chang.dailylearn.dm.dialog.PraiseDialog
-import com.chang.dailylearn.view.AnimatorMaskTextView
+import com.chang.dailylearn.view.immerse
+import com.chang.snow.SnowView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
+        immerse(statusBarDarkMode = true)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
         mBinding.tvHello.setMaskDrawable(
@@ -41,5 +42,21 @@ class MainActivity : AppCompatActivity() {
         }
         dialogs[0].showDialog()
 
+        val snowView = SnowView.Builder(this)
+            .setSnowflakeImageResId(R.drawable.icon_small_snowflake)
+            .setSnowflakeCount(100)
+            .setSpeedRange(10, 20)
+            .setSizeRangeInPx(40, 60)
+            .setAlphaRange(150, 255)
+            .setAngleMax(10)
+            .build()
+
+        mBinding.clRoot.addView(
+            snowView,
+            ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+        )
     }
 }
