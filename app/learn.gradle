@@ -1,0 +1,58 @@
+tasks.register('Hello') {
+    it.configure {
+        dependsOn(provider {
+            tasks.findAll {
+                it.name.contentEquals("UseTime")
+            }
+        })
+    }
+    it.doFirst {
+        println("${name} Start time: ${new Date()}")
+    }
+    it.doLast {
+        println("${name} End time: ${new Date()}")
+    }
+}
+
+tasks.register("UseTime") {
+    it.doFirst {
+        println("${name} Start time: ${new Date()}")
+    }
+
+    it.doLast {
+        println("${name} End time: ${new Date()}")
+    }
+}
+
+class TestTask extends DefaultTask {
+
+    @Internal
+    def taskName = "default"
+
+    @TaskAction
+    def MyAction1() {
+        println("$taskName -- MyAction1")
+    }
+
+    @TaskAction
+    def MyAction2() {
+        println("$taskName -- MyAction2")
+    }
+}
+
+
+def yechaoa111 = tasks.register("yechaoa111") {
+    it.doLast {
+        println("${it.name}")
+    }
+}
+
+def yechaoa222 = tasks.register("yechaoa222") {
+    it.doLast {
+        println("${it.name}")
+    }
+}
+
+yechaoa111.configure {
+    dependsOn yechaoa222
+}

@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+apply from: "learn.gradle"
+
 android {
     namespace 'com.chang.dailylearn'
     compileSdk 33
