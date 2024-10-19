@@ -1,8 +1,8 @@
 package com.chang.dailylearn
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.chang.dailylearn.databinding.ActivityMainBinding
 import com.chang.dailylearn.dm.dialog.AbsDialog
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         immerse(statusBarDarkMode = true)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+
         mBinding.tvHello.setMaskDrawable(
             ContextCompat.getDrawable(
                 this,

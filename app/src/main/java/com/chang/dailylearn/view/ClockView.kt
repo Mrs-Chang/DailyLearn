@@ -2,6 +2,7 @@ package com.chang.dailylearn.view
 
 import android.content.Context
 import android.graphics.*
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.View
 import java.util.*
